@@ -1,0 +1,21 @@
+{
+  "name": "cyprojectnest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Big Project NestAcademy Bootcamp Website XYZ BANK",
+  "author": "Wafa",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^12.5.1"
+  },
+  "dependencies": {
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "babel-plugin-module-resolver": "4.1.0",
+    "browserify": "^17.0.0",
+    "prettier": "^2.8.4"
+  },
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run" : "cypress run"
+  }
+}
