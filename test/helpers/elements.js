@@ -10,6 +10,6 @@ export function click(selector, ...args){
     return cy.get(selector).click(...args);
 } 
 
-export function dropDown(selector, click){
-    return cy.get('.dropdown-menu').click()
+export function dropDown(selector, ...args){
+    return cy.get('.dropdown-menu').click(...args)
 }
