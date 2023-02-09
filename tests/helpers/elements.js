@@ -10,9 +10,12 @@ export function click(selector, ...args){
     return cy.get(selector).click(...args);
 } 
 
+export function click2(selector){
+    return cy.get(selector).click({ force: true });
+} 
 
-export function dbclick(selector, ...args){
-    return cy.get(selector).dblclick(...args);
+export function dbclick(selector){
+    return cy.get(selector).dblclick({ force: true });
 }
 
 export function dropDown(selector){
