@@ -1,0 +1,7 @@
+export const managerLogin = '[ng-click="manager()"]' 
+export const addCustomer = '[ng-class="btnClass1"]'
+export const firstName = '[ng-model="fName"]'
+export const lastName = '[ng-model="lName"]'
+export const postCode = '[ng-model="postCd"]'
+export const addCustomerButton = '[class="btn btn-default"]'
+export const alertAddCus = '.command-info'

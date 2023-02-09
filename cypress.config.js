@@ -7,10 +7,10 @@ module.exports = defineConfig({
   chromeWebSecurity : false,
   defaultCommandTimeout : 10000,
   env:{
-    baseUrl:"https://www.globalsqa.com/angularJs-protractor/BankingProject/#"
+    baseUrl:"https://www.globalsqa.com/angularJs-protractor/BankingProject"
   },
   e2e: {
-    setupNodeEvents(on, config) {
+    setupNodeEvents(on) {
       let options = browserify.defaultOptions;
       options.browserifyOptions.transform[1][1].plugins.push([
         'module-resolver',
