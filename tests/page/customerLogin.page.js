@@ -1,7 +1,15 @@
-export const dropdownField = '#userSelect'
-export const loginButton = '.btn btn-default'             //Use class
-export const customerLogin = '[ng-click="customer()"]'             //Use class
-export const title1 = '[<label>Your Name :</label>]'
-
-
-
+export const pageLogin = "body > div > div > div.ng-scope > div > div.borderM.box.padT20 > div:nth-child(1) > button";
+export const usernameChoice = '#userSelect';
+export const loginButton = '[class="btn btn-default"]';
+export const customerName = ".fontBig";
+export const currencyChoice = "#accountSelect";
+export const accountNumber = ".ng-binding:nth-child(1)";
+export const depositAmount = ".ng-binding:nth-child(2)";
+export const selectedCurrency = ".ng-binding:nth-child(3)";
+export const logoutButton = ".logout";
+export const transactionsButton = "body > div > div > div.ng-scope > div > div:nth-child(5) > button:nth-child(1)";
+export const depositButton = "body > div > div > div.ng-scope > div > div:nth-child(5) > button:nth-child(2)";
+export const withdrawlButton = "body > div > div > div.ng-scope > div > div:nth-child(5) > button:nth-child(3)";
+export const amountInput = '[ng-model="amount"]';
+export const depositButton2 = '[class="btn btn-default"]';
+export const depositMessage = ".error.ng-binding";

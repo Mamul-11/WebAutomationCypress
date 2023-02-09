@@ -28,6 +28,14 @@ export function handlingAlert(){
     });
 }
 
+export function submit(selector) {
+    return cy.get(selector).submit();
+}
+
+export function select(selector, value) {
+    return cy.get(selector).select(value);
+}
+
 // it('handling alert', function (){
 //     cy.get('[type="submit"]').click()
 //     cy.on('windows:alert', (str) => {
