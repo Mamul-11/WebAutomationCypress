@@ -186,6 +186,137 @@ describe('Customer Deposit', () => {
             });
         });
     });
+});
 
+describe('Customer Transaction', () => {
+    // create a test case to login as a customer
+    beforeEach(() => {
+        // navigate to the customer login page
+        route.visit(ROUTES.home);
+        // login as a customer
+        element.click(customerLogin.pageLogin);
+        asserts.urlShouldBe(ROUTES.customer);
+        element.select(customerLogin.usernameChoice, auth.CUSTOMER.name);
+        element.click(customerLogin.loginButton);
+        asserts.shouldContainText(customerLogin.customerName, auth.CUSTOMER.name);
+        asserts.urlShouldBe(ROUTES.account);
+        asserts.visible(customerLogin.logoutButton);
+        asserts.visible(customerLogin.transactionsButton);
+        asserts.visible(customerLogin.depositButton);
+        asserts.visible(customerLogin.withdrawlButton);
+    });
 
+    describe('Positive Cases', () => {
+        it('Verify transaction if no transaction created in dollar currency as a registered customer ', () => {
+            element.select(customerLogin.currencyChoice, auth.CUSTOMER.dollar);
+            asserts.visible(customerLogin.selectedCurrency);
+            asserts.shouldContainText(customerLogin.selectedCurrency, 'Dollar');
+            asserts.visible(customerLogin.accountNumber);
+            asserts.shouldContainText(customerLogin.accountNumber, 1004);
+            element.click(customerLogin.transactionsButton);
+            cy.wait(500)
+            asserts.visible(customerLogin.backButton);
+            asserts.shouldContainText(customerLogin.backButton, auth.CUSTOMER.back);
+            asserts.shouldContainText(customerLogin.dateTransaction, auth.CUSTOMER.dateTransaction);
+            asserts.shouldContainText(customerLogin.amountTransaction, auth.CUSTOMER.amountTransaction);
+            asserts.shouldContainText(customerLogin.typeTransaction, auth.CUSTOMER.typeTransaction);
+        });
+        it('Verify transaction if no transaction created in pound currency as a registered customer ', () => {
+            element.select(customerLogin.currencyChoice, auth.CUSTOMER.pound);
+            asserts.visible(customerLogin.selectedCurrency);
+            asserts.shouldContainText(customerLogin.selectedCurrency, 'Pound');
+            asserts.visible(customerLogin.accountNumber);
+            asserts.shouldContainText(customerLogin.accountNumber, 1005);
+            element.click(customerLogin.transactionsButton);
+            cy.wait(500)
+            asserts.visible(customerLogin.backButton);
+            asserts.shouldContainText(customerLogin.backButton, auth.CUSTOMER.back);
+            asserts.shouldContainText(customerLogin.dateTransaction, auth.CUSTOMER.dateTransaction);
+            asserts.shouldContainText(customerLogin.amountTransaction, auth.CUSTOMER.amountTransaction);
+            asserts.shouldContainText(customerLogin.typeTransaction, auth.CUSTOMER.typeTransaction);
+        });
+        it('Verify transaction if no transaction created in rupee currency as a registered customer ', () => {
+            element.select(customerLogin.currencyChoice, auth.CUSTOMER.rupee);
+            asserts.visible(customerLogin.selectedCurrency);
+            asserts.shouldContainText(customerLogin.selectedCurrency, 'Rupee');
+            asserts.visible(customerLogin.accountNumber);
+            asserts.shouldContainText(customerLogin.accountNumber, 1006);
+            element.click(customerLogin.transactionsButton);
+            cy.wait(500)
+            asserts.visible(customerLogin.backButton);
+            asserts.shouldContainText(customerLogin.backButton, auth.CUSTOMER.back);
+            asserts.shouldContainText(customerLogin.dateTransaction, auth.CUSTOMER.dateTransaction);
+            asserts.shouldContainText(customerLogin.amountTransaction, auth.CUSTOMER.amountTransaction);
+            asserts.shouldContainText(customerLogin.typeTransaction, auth.CUSTOMER.typeTransaction);
+        });
+        it('Verify transaction if transaction created in dollar currency as a registered customer ', () => {
+            element.select(customerLogin.currencyChoice, auth.CUSTOMER.dollar);
+            asserts.visible(customerLogin.selectedCurrency);
+            asserts.shouldContainText(customerLogin.selectedCurrency, 'Dollar');
+            asserts.visible(customerLogin.accountNumber);
+            asserts.shouldContainText(customerLogin.accountNumber, 1004);
+            element.click(customerLogin.depositButton);
+            element.fillField(customerLogin.amountInput, 100);
+            element.click(customerLogin.depositButton2);
+            asserts.shouldContainText(customerLogin.depositMessage, auth.CUSTOMER.depositMessage);
+            asserts.shouldContainText(customerLogin.depositAmount, auth.CUSTOMER.amount);
+            cy.wait(500)
+            element.click(customerLogin.transactionsButton);
+            cy.wait(500)
+            asserts.visible(customerLogin.backButton);
+            asserts.shouldContainText(customerLogin.backButton, auth.CUSTOMER.back);
+            asserts.shouldContainText(customerLogin.dateTransaction, auth.CUSTOMER.dateTransaction);
+            asserts.shouldContainText(customerLogin.amountTransaction, auth.CUSTOMER.amountTransaction);
+            asserts.shouldContainText(customerLogin.typeTransaction, auth.CUSTOMER.typeTransaction);
+        });
+        it('Verify transaction if transaction created in pound currency as a registered customer ', () => {
+            element.select(customerLogin.currencyChoice, auth.CUSTOMER.pound);
+            asserts.visible(customerLogin.selectedCurrency);
+            asserts.shouldContainText(customerLogin.selectedCurrency, 'Pound');
+            asserts.visible(customerLogin.accountNumber);
+            asserts.shouldContainText(customerLogin.accountNumber, 1005);
+            element.click(customerLogin.depositButton);
+            element.fillField(customerLogin.amountInput, 100);
+            element.click(customerLogin.depositButton2);
+            asserts.shouldContainText(customerLogin.depositMessage, auth.CUSTOMER.depositMessage);
+            asserts.shouldContainText(customerLogin.depositAmount, auth.CUSTOMER.amount);
+            cy.wait(500)
+            element.click(customerLogin.transactionsButton);
+            cy.wait(500)
+            asserts.visible(customerLogin.backButton);
+            asserts.shouldContainText(customerLogin.backButton, auth.CUSTOMER.back);
+            asserts.shouldContainText(customerLogin.dateTransaction, auth.CUSTOMER.dateTransaction);
+            asserts.shouldContainText(customerLogin.amountTransaction, auth.CUSTOMER.amountTransaction);
+            asserts.shouldContainText(customerLogin.typeTransaction, auth.CUSTOMER.typeTransaction);
+        });
+        it('Verify transaction if transaction created in rupee currency as a registered customer ', () => {
+            element.select(customerLogin.currencyChoice, auth.CUSTOMER.rupee);
+            asserts.visible(customerLogin.selectedCurrency);
+            asserts.shouldContainText(customerLogin.selectedCurrency, 'Rupee');
+            asserts.visible(customerLogin.accountNumber);
+            asserts.shouldContainText(customerLogin.accountNumber, 1006);
+            element.click(customerLogin.depositButton);
+            element.fillField(customerLogin.amountInput, 100);
+            element.click(customerLogin.depositButton2);
+            asserts.shouldContainText(customerLogin.depositMessage, auth.CUSTOMER.depositMessage);
+            asserts.shouldContainText(customerLogin.depositAmount, auth.CUSTOMER.amount);
+            cy.wait(500)
+            element.click(customerLogin.transactionsButton);
+            cy.wait(500)
+            asserts.visible(customerLogin.backButton);
+            asserts.shouldContainText(customerLogin.backButton, auth.CUSTOMER.back);
+            asserts.visible(customerLogin.dateTransaction);
+            asserts.shouldContainText(customerLogin.dateTransaction, auth.CUSTOMER.dateTransaction);
+            asserts.visible(customerLogin.amountTransaction);
+            asserts.shouldContainText(customerLogin.amountTransaction, auth.CUSTOMER.amountTransaction);
+            asserts.visible(customerLogin.typeTransaction);
+            asserts.shouldContainText(customerLogin.typeTransaction, auth.CUSTOMER.typeTransaction);
+            asserts.visible("#anchor0 > td:nth-child(1)")
+            asserts.shouldContainText("#anchor0 > td:nth-child(1)", "Feb 9, 2023");
+            asserts.visible("#anchor0 > td:nth-child(2)")
+            asserts.shouldContainText("#anchor0 > td:nth-child(2)", auth.CUSTOMER.amount);
+            asserts.visible("#anchor0 > td:nth-child(3)")
+            asserts.shouldContainText("#anchor0 > td:nth-child(3)", "Credit");
+        });
+    });
 });

@@ -9,5 +9,8 @@ export const CUSTOMER = {
     'alertMessage' : 'Transaction Failed. You can not withdraw amount more than the balance.',
     'withdrawlMessage' : 'Transaction successful',
     'transactionMessage' : 'Transaction Details',
-
+    'dateTransaction' : 'Date-Time',
+    'amountTransaction' : 'Amount',
+    'typeTransaction' : 'Transaction Type',
+    'back' : 'Back',
 }
