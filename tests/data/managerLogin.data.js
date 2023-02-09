@@ -24,3 +24,19 @@ export const CUST_EMPTY_POSTCODE = {
     firstname : "Kamu",
     lastname : "Dia"
 }
+
+export const CUST_EMPTY = {
+    firstname : "",
+    lastname : "",
+    postcode :""
+}
+
+export const OPEN_ACOUNT = {
+    username : 'Albus Dumbledore',
+    nickname : 'Albus',
+    postcode : 'E859AB',
+    norek   : 1009,
+    currency1 : 'Dollar',
+    currency2 : 'Pound',
+    currency3 : 'Rupee',
+}
