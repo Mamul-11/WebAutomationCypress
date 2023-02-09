@@ -8,6 +8,7 @@ export const CUSTOMER = {
     'emptyAmountMessage' : 'Please fill out this field.',
     'alertMessage' : 'Transaction Failed. You can not withdraw amount more than the balance.',
     'withdrawlMessage' : 'Transaction successful',
+    'withdrawlMessageError' : 'Transaction Failed. You can not withdraw amount more than the balance',
     'transactionMessage' : 'Transaction Details',
     'dateTransaction' : 'Date-Time',
     'amountTransaction' : 'Amount',
